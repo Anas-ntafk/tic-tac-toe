@@ -5,6 +5,7 @@
 /*---------------------------- Variables (state) ----------------------------*/
 let currentPlayer = 'X'
 let isGameOver = false
+let moveCount = 0
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -18,6 +19,7 @@ const sqr5El = document.getElementById('5')
 const sqr6El = document.getElementById('6')
 const sqr7El = document.getElementById('7')
 const sqr8El = document.getElementById('8')
+const resetBtn = document.querySelector('#reset')
 
 
 
@@ -297,4 +299,18 @@ sqr8El.addEventListener('click', () => {
 }
 messageEl.textContent = `its ${currentPlayer} turn`
     }
+})
+resetBtn.addEventListener('click', () => {
+     currentPlayer = 'X'
+     isGameOver = false
+     messageEl.textContent = `its ${currentPlayer} turn!`
+     sqr0El.textContent = ''
+     sqr1El.textContent = ''
+     sqr2El.textContent = ''
+     sqr3El.textContent = ''
+     sqr4El.textContent = ''
+     sqr5El.textContent = ''
+     sqr6El.textContent = ''
+     sqr7El.textContent = ''
+     sqr8El.textContent = ''
 })
